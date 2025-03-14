@@ -1,0 +1,183 @@
+:root {
+    --background-light: #f5f5f5;
+    --background-dark: #1e1e1e;
+    --text-light: #000;
+    --text-dark: #fff;
+    --card-light: #fff;
+    --card-dark: #2c2c2c;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-light); /* Utilisation de la variable pour le fond */
+    color: var(--text-light); /* Utilisation de la variable pour la couleur du texte */
+    transition: background-color 0.3s, color 0.3s; /* Transition douce pour les changements de couleurs */
+}
+
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    margin: auto;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background: #4caf50;
+    color: white;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.prev { background-color: #ff6b6b; color: white; }
+.next { background-color: #4caf50; color: white; }
+
+.add-card {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: flex-start; /* Aligne les éléments au début (gauche) */
+}
+
+.add-card input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-card button {
+    background-color: #0060c7;
+    color: white;
+    padding: 15px 30px; 
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px; 
+    margin-top: 10px; 
+    width: 100%;
+}
+
+
+.memory-buttons {
+    margin-top: 20px;
+}
+
+.memory-buttons .forgot {
+    background-color: #ffcc00;
+    color: black;
+}
+
+.memory-buttons .correct {
+    background-color: #4caf50;
+    color: white;
+}
+.correct {
+    background-color: #28a745;
+    color: white;
+}
+
+.forgotten {
+    background-color: #dc3545;
+    color: white;
+}
+.progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s ease-in-out;
+}
+
+.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.dark-mode .card-front, 
+.dark-mode .card-back {
+    background: var(--card-dark);
+    box-shadow: 0 4px 6px var(--shadow-dark);
+}
+
+.dark-mode .progress-container {
+    background-color: #444;
+}
+.toggle-theme {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.dark-mode .toggle-theme {
+    background-color: #ddd;
+    color: black;
+}
+

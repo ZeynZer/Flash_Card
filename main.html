@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="card" onclick="flipCard()">
+            <div class="card-inner">
+                <div class="card-front" id="question">Ajoutez une carte <br> Younes !</div>
+                <div class="card-back hidden" id="answer"></div>
+            </div>
+        </div>
+        <button class="toggle-theme" onclick="toggleTheme()">🌙 Mode sombre</button>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>        
+        <div class="buttons">
+            <button class="prev" onclick="prevCard()">Précédent</button>
+            <button class="next" onclick="nextCard()">Suivant</button>
+            <button class="correct" onclick="markCorrect()">Juste</button>
+            <button class="forgotten" onclick="markForgotten()">Oublié</button>
+        </div>
+        <div class="add-card">
+            <input type="text" id="newQuestion" placeholder="Nouvelle question">
+            <input type="text" id="newAnswer" placeholder="Nouvelle réponse">
+            <button onclick="addCard()">Ajouter</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
